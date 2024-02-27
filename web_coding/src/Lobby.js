@@ -11,7 +11,8 @@ function Lobby() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/codeblocks')
+    //axios.get('http://localhost:3000/api/codeblocks')
+    axios.get('codeblockserver-production.up.railway.app/api/codeblocks')
       .then(response => {
         setCodeBlocks(response.data);
       })
@@ -31,7 +32,8 @@ function Lobby() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newTitle && newCode) {
-      axios.post('http://localhost:3000/api/codeblocks', { title: newTitle, code: newCode })
+      //axios.post('http://localhost:3000/api/codeblocks', { title: newTitle, code: newCode })
+      axios.post('codeblockserver-production.up.railway.app/api/codeblocks', { title: newTitle, code: newCode })
         .then(response => {
           console.log('New CodeBlock added:', response.data);
           setCodeBlocks([...codeBlocks, response.data]);
