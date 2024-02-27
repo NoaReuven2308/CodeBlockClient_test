@@ -6,7 +6,7 @@ import Lobby from './Lobby';
 import CodeBlockPage from './CodeBlockPage';
 
 // Initialize socket connection
-const socket = io('http://localhost:3000'); // Update with your server's address
+const socket = io('codeblockserver-production.up.railway.app'); // Update with your server's address
 
 function App() {
   return (
